@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio de Yasmine Boukadida - Data Science & IA Engineer">
+    <meta name="theme-color" content="#0f172a">
+    <title>Yasmine Boukadida | Data Science & IA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide.js/0.263.1/umd/lucide.min.js"></script>
+    <style>
+        @keyframes blob {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(30px, -50px) scale(1.1); }
+            66% { transform: translate(-20px, 20px) scale(0.9); }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(6, 182, 212, 0.5); }
+            50% { box-shadow: 0 0 40px rgba(6, 182, 212, 0.8); }
+        }
+
+        .animate-blob {
+            animation: blob 7s infinite;
+        }
+
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .glow-effect {
+            animation: glow 2s ease-in-out infinite;
+        }
+
+        .animation-delay-2000 {
+            animation-delay: 2s;
+        }
+
+        .animation-delay-4000 {
+            animation-delay: 4s;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgba(15, 23, 42, 0.5);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: rgba(6, 182, 212, 0.5);
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(6, 182, 212, 0.8);
+        }
+
+        .transition-all {
+            transition: all 0.3s ease;
+        }
+
+        .hover-scale:hover {
+            transform: scale(1.05);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #06b6d4 0%, #a855f7 50%, #ec4899 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-slate-950 via-purple-950 to-slate-950 text-white overflow-x-hidden">
+
+    <!-- Animated Background -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
+        <div class="absolute top-0 left-1/4 w-96 h-96 bg-purple-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
+        <div class="absolute top-1/3 right-0 w-96 h-96 bg-cyan-500 rounded-full mix-blend-multiply filter blur-3xl opacity-15 animate-pulse animation-delay-2000"></div>
+        <div class="absolute bottom-0 left-1/3 w-80 h-80 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse animation-delay-4000"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 backdrop-blur-xl bg-slate-950/80 border-b border-purple-500/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="#home" class="text-2xl font-black bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent hover:opacity-80 transition">
+                    YASMINE
+                </a>
+                
+                <div class="hidden md:flex gap-8">
+                    <a href="#home" class="text-gray-300 hover:text-cyan-400 transition capitalize font-medium text-sm uppercase tracking-wide">Home</a>
+                    <a href="#projects" class="text-gray-300 hover:text-cyan-400 transition capitalize font-medium text-sm uppercase tracking-wide">Projects</a>
+                    <a href="#skills" class="text-gray-300 hover:text-cyan-400 transition capitalize font-medium text-sm uppercase tracking-wide">Skills</a>
+                    <a href="#contact" class="text-gray-300 hover:text-cyan-400 transition capitalize font-medium text-sm uppercase tracking-wide">Contact</a>
+                </div>
+
+                <button id="mobileMenuBtn" class="md:hidden p-2 rounded-lg hover:bg-purple-500/20 transition">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="hidden md:hidden pb-4 space-y-2">
+                <a href="#home" class="block px-4 py-2 text-gray-300 hover:text-cyan-400 hover:bg-purple-500/10 rounded-lg transition capitalize">Home</a>
+                <a href="#projects" class="block px-4 py-2 text-gray-300 hover:text-cyan-400 hover:bg-purple-500/10 rounded-lg transition capitalize">Projects</a>
+                <a href="#skills" class="block px-4 py-2 text-gray-300 hover:text-cyan-400 hover:bg-purple-500/10 rounded-lg transition capitalize">Skills</a>
+                <a href="#contact" class="block px-4 py-2 text-gray-300 hover:text-cyan-400 hover:bg-purple-500/10 rounded-lg transition capitalize">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative pt-40 pb-32 px-4 overflow-hidden z-10">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <div class="inline-block animate-float">
+                        <span class="px-4 py-2 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 border border-cyan-500/50 rounded-full text-sm text-cyan-300 font-semibold">
+                            👋 Bienvenue
+                        </span>
+                    </div>
+                    
+                    <h1 class="text-6xl md:text-7xl font-black leading-tight">
+                        <span class="gradient-text">
+                            Data Science
+                        </span>
+                        <br/>
+                        <span class="text-white">& Intelligence</span>
+                        <br/>
+                        <span class="gradient-text">
+                            Artificielle
+                        </span>
+                    </h1>
+
+                    <p class="text-xl text-gray-300 leading-relaxed max-w-xl">
+                        Étudiante en 3ème année Génie Informatique | Data Science & Actuariat à ESPRIT. Développeuse passionnée par l'IA, le Machine Learning et les solutions innovantes.
+                    </p>
+
+                    <div class="flex flex-wrap gap-4 pt-4">
+                        <a href="mailto:yasmine.boukadida@esprit.tn" class="px-8 py-3 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-lg font-bold hover:shadow-xl hover:shadow-cyan-500/40 transition transform hover:scale-105 inline-block">
+                            Me Contacter
+                        </a>
+                        <a href="#contact" class="px-8 py-3 border-2 border-purple-500 rounded-lg font-bold hover:bg-purple-500/10 transition inline-block">
+                            En Savoir Plus
+                        </a>
+                    </div>
+
+                    <div class="flex gap-6 pt-4">
+                        <a href="https://linkedin.com/in/yasmine-boukadida" target="_blank" rel="noopener noreferrer" class="p-3 bg-purple-500/20 border border-purple-500/40 rounded-lg hover:border-cyan-500/60 transition hover:scale-110 duration-300" title="LinkedIn">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M16.338 16.338H13.67V12.16c0-.995-.017-2.553-1.553-2.553-1.554 0-1.792 1.213-1.792 2.46v3.721H8.584V9.255h2.533v1.083h.035c.353-.67 1.215-1.378 2.501-1.378 2.651 0 3.14 1.742 3.14 4.053zM5.004 8.575a1.548 1.548 0 11-.002-3.096 1.548 1.548 0 01.002 3.096zm-1.337 7.763h2.673V9.255H3.667v7.083zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z"/></svg>
+                        </a>
+                        <a href="https://github.com/yasmine20022" target="_blank" rel="noopener noreferrer" class="p-3 bg-purple-500/20 border border-purple-500/40 rounded-lg hover:border-cyan-500/60 transition hover:scale-110 duration-300" title="GitHub">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 0C4.477 0 0 4.484 0 10.017c0 4.425 2.865 8.18 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.868-.013-1.703-2.782.603-3.369-1.343-3.369-1.343-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.545 2.914 1.209.092-.937.35-1.546.636-1.903-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0110 4.817a9.54 9.54 0 012.502.336c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C17.138 18.194 20 14.44 20 10.017 20 4.484 15.522 0 10 0z" clip-rule="evenodd"/></svg>
+                        </a>
+                        <a href="mailto:yasmine.boukadida@esprit.tn" class="p-3 bg-purple-500/20 border border-purple-500/40 rounded-lg hover:border-cyan-500/60 transition hover:scale-110 duration-300" title="Email">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hero Image/Animation -->
+                <div class="relative hidden md:block">
+                    <div class="absolute inset-0 bg-gradient-to-br from-cyan-500/20 to-purple-500/20 rounded-2xl blur-2xl"></div>
+                    <div class="relative bg-gradient-to-br from-purple-900/50 to-cyan-900/30 border border-purple-500/30 rounded-2xl p-8 backdrop-blur-sm hover:border-cyan-500/50 transition">
+                        <div class="space-y-4">
+                            <div class="h-12 bg-gradient-to-r from-cyan-400 to-purple-400 rounded-lg opacity-20"></div>
+                            <div class="space-y-3">
+                                <div class="h-3 bg-gray-600 rounded opacity-40" style="width: 85%"></div>
+                                <div class="h-3 bg-gray-600 rounded opacity-40" style="width: 70%"></div>
+                                <div class="h-3 bg-gray-600 rounded opacity-40" style="width: 55%"></div>
+                                <div class="h-3 bg-gray-600 rounded opacity-40" style="width: 40%"></div>
+                                <div class="h-3 bg-gray-600 rounded opacity-40" style="width: 25%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-16 px-4 relative z-10">
+        <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div class="p-6 bg-gradient-to-br from-purple-500/10 to-cyan-500/10 border border-purple-500/30 rounded-xl hover:border-cyan-500/60 transition backdrop-blur-sm hover:scale-105 duration-300">
+                <div class="text-3xl md:text-4xl font-black gradient-text">6+</div>
+                <div class="text-sm text-gray-400 mt-2">Projets Réalisés</div>
+            </div>
+            <div class="p-6 bg-gradient-to-br from-purple-500/10 to-cyan-500/10 border border-purple-500/30 rounded-xl hover:border-cyan-500/60 transition backdrop-blur-sm hover:scale-105 duration-300">
+                <div class="text-3xl md:text-4xl font-black gradient-text">3</div>
+                <div class="text-sm text-gray-400 mt-2">Certifications</div>
+            </div>
+            <div class="p-6 bg-gradient-to-br from-purple-500/10 to-cyan-500/10 border border-purple-500/30 rounded-xl hover:border-cyan-500/60 transition backdrop-blur-sm hover:scale-105 duration-300">
+                <div class="text-3xl md:text-4xl font-black gradient-text">4</div>
+                <div class="text-sm text-gray-400 mt-2">Langues Parlées</div>
+            </div>
+            <div class="p-6 bg-gradient-to-br from-purple-500/10 to-cyan-500/10 border border-purple-500/30 rounded-xl hover:border-cyan-500/60 transition backdrop-blur-sm hover:scale-105 duration-300">
+                <div class="text-3xl md:text-4xl font-black gradient-text">2025</div>
+                <div class="text-sm text-gray-400 mt-2">Stage 6 Mois</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-24 px-4 relative z-10">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-black mb-4">
+                    <span class="gradient-text">Projets & Expériences</span>
+                </h2>
+                <p class="text-gray-300 text-lg">Explorez mes réalisations en IA, ML et développement</p>
+            </div>
+
+            <!-- Filter Tabs -->
+            <div class="flex flex-wrap gap-3 justify-center mb-12">
+                <button class="filter-btn px-6 py-2 rounded-lg font-semibold transition transform hover:scale-105 bg-gradient-to-r from-cyan-500 to-purple-600 shadow-lg shadow-cyan-500/40" data-filter="all">
+                    Tous
+                </button>
+                <button class="filter-btn px-6 py-2 rounded-lg font-semibold transition transform hover:scale-105 bg-purple-500/20 border border-purple-500/40 hover:border-cyan-500/60" data-filter="ia">
+                    IA
+                </button>
+                <button class="filter-btn px-6 py-2 rounded-lg font-semibold transition transform hover:scale-105 bg-purple-500/20 border border-purple-500/40 hover:border-cyan-500/60" data-filter="fullstack">
+                    FULLSTACK
+                </button>
+                <button class="filter-btn px-6 py-2 rounded-lg font-semibold transition transform hover:scale-105 bg-purple-500/20 border border-purple-500/40 hover:border-cyan-500/60" data-filter="ml">
+                    ML
+                </button>
+                <button class="filter-btn px-6 py-2 rounded-lg font-semibold transition transform hover:scale-105 bg-purple-500/20 border border-purple-500/40 hover:border-cyan-500/60" data-filter="viz">
+                    VIZ
+                </button>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="projects-grid grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Project 1 -->
+                <div class="project-card group relative overflow-hidden rounded-xl border border-purple-500/30 hover:border-cyan-500/60 transition duration-300 backdrop-blur-sm bg-gradient-to-br from-purple-900/30 to-cyan-900/20 hover:from-purple-900/50 hover:to-cyan-900/40 hover:scale-105" data-category="ia">
+                    <div class="p-6">
+                        <div class="text-5xl mb-4 group-hover:scale-110 transition duration-300">🏃</div>
+                        <div class="text-xs text-cyan-400 font-semibold mb-2">07/2025 - 08/2025</div>
+                        <h3 class="text-xl font-black mb-2 group-hover:text-cyan-400 transition">FitGen – Assistant IA</h3>
+                        <p class="text-gray-300 text-sm mb-4">Assistant intelligent multimodal pour l'analyse et coaching sportif</p>
+                        <div class="space-y-3 mb-4">
+                            <div class="flex items-start gap-2">
+                                <span class="text-cyan-400 mt-1 flex-shrink-0">✓</span>
+                                <span class="text-xs text-gray-300">Architecture Multimodal RAG avancée</span>
+                            </div>
+                            <div class="flex items-start gap-2">
+                                <span class="text-cyan-400 mt-1 flex-shrink-0">✓</span>
+                                <span class="text-xs text-gray-300">Pipeline extraction & indexation sémantique</span>
+                            </div>
+                            <div class="flex items-start gap-2">
+                                <span class="text-cyan-400 mt-1 flex-shrink-0">✓</span>
+                                <span class="text-xs text-gray-300">Recommandations personnalisées en temps réel</span>
+                            </div>
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 text-xs bg-cyan-500/20 text-cyan-300 rounded-full border border-cyan-500/30">LangChain</span>
+                            <span class="px-2 py-1 text-xs bg-cyan-500/20 text-cyan-300 rounded-full border border-cyan-500/30">FAISS</span>
+                            <span class="px-2 py-1 text-xs bg-cyan-500/20 text-cyan-300 rounded-full border border-cyan-500/30">Streamlit</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card group relative overflow-hidden rounded-xl border border-purple-500/30 hover:border-cyan-500/60 transition duration-300 backdrop-blur-sm bg-gradient-to-br from-purple-900/30 to-cyan-900/20 hover:from-purple-900/50 hover:to-cyan-900/40 hover:scale-105" data-category="fullstack">
+                    <div class="p-6">
+                        <div class="text-5xl mb-4 group-hover:scale-110 transition duration-300">📧</div>
+                        <div class="text-xs text-cyan-400 font-semibold mb-2">07/2024 - 08/2024</div>
+                        <h3 class="text-xl font-black mb-2 group-hover:text-cyan-400 transition">SmartMail – Email Marketing</h3>
+                        <p class="text-gray-300 text-sm mb-4">SaaS full-stack avec génération automatique de contenu</p>
+                        <div class="space-y-3 mb-4">
+                            <div class="flex items-start gap-2">
+                                <span class="text-cyan-400 mt-1 flex-shrink-0">✓</span>
+                                <span class="text-xs text-gray-300">Éditeur drag & drop personnalisé</span>
+                            </div>
+                            <div class="flex items-start gap-2">
+                                <span class="text-cyan-400 mt-1 flex-shrink-0">✓</span>
+                                <span class="text-xs text-gray-300">Génération de contenu par IA</span>
+                            </div>
+                            <div class="flex items-start gap-2">
+                                <span class="text-cyan-400 mt-1 flex-shrink-0">✓</span>
+                                <span class="text-xs text-gray-300">Intégration SendGrid pour envoi</span>
+                            </div>
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 text-xs bg-cyan-500/20 text-cyan-300 rounded-full border border-cyan-500/30">React</span>
+                            <span class="px-2 py-1 text-xs bg-cyan-500/20 text-cyan-300 rounded-full border border-cyan-500/30">Flask</span>
+                            <span class="px-2 py-1 text-xs bg-cyan-500/20 text-cyan-300 rounded-full border border-cyan-500/30">OpenAI</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card group relative overflow-hidden rounded-xl border border-purple-500/30 hover:border-cyan-500/60 transition duration-300 backdrop-blur-sm bg-gradient-to-br from-purple-900/30 to-cyan-900/20 hover:from-purple-900/50 hover:to-cyan-900/40 hover:scale-105" data-category="ml">
+                    <div class="p-6">
+                        <div class="text-5xl mb-4 group-hover:scale-110 transition duration-300">🔍</div>
+                        <div class="text-xs text-cyan-400 font-semibold mb-2">2025</div>
+                        <h3 class="text-xl font-black mb-2 group-hover:text-cyan-400 transition">Neuraldox – OCR</h3>
+                        <p class="text-gray-300 text-sm mb-4">Pipeline OCR pour extraction de texte manuscrit et imprimé</p>
+                        <div class="space-y-3 mb-4">
+                            <div class="flex items-start gap-2">
+                                <span class="text-cyan-400 mt-1 flex-shrink-0">✓</span>
+                                <span class="text-xs text-gray-300">Modèles d'attention avancés</span>
+                            </div>
+                            <div class="flex items-start gap-2">
+                                <span class="text-cyan-400 mt-1 flex-shrink-0">✓</span>
+                                <span class="text-xs text-gray-300">Interface sécurisée de production</span>
+                            </div>
+                            <div class="flex items-start gap-2">
+                                <span class="text-cyan-400 mt-1 flex-shrink-0">✓</span>
+                                <span class="text-xs text-gray-300">Documentation technique complète</span>
+                            </div>
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 text-xs bg-cyan-500/20 text-cyan-300 rounded-full border border-cyan-500/30">TrOCR</span>
+                            <span class="px-2 py-1 text-xs bg-cyan-500/20 text-cyan-300 rounded-full border border-cyan-500/30">FastAPI</span>
+                            <span class="px-2 py-1 text-xs bg-cyan-500/20 text-cyan-300 rounded-full border border-cyan-500/30">TensorFlow</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card group relative overflow-hidden rounded-xl border border-purple-500/30 hover:border-cyan-500/60 transition duration-300 backdrop-blur-sm bg-gradient-to-br from-purple-900/30 to-cyan-900/20 hover:from-purple-900/50 hover:to-cyan-900/40 hover:scale-105" data-category="ml">
+                    <div class="p-6">
+                        <div class="text-5xl mb-4 group-hover:scale-110 transition duration-300">📊</div>
+                        <div class="text-xs text-cyan-400 font-semibold mb-2">2025</div>
+                        <h3 class="text-xl font-black mb-2 group-hover:text-cyan-400 transition">Prédiction Churn Client</h3>
+                        <p class="text-gray-300 text-sm mb-4">Modèles de classification pour prédire l'attrition client</p>
+                        <div class="space-y-3 mb-4">
+                            <div class="flex items-start gap-2">
+                                <span class="text-cyan-400 mt-1 flex-shrink-0">✓</span>
+                                <span class="text-xs text-gray-300">Analyses exploratoires détaillées</span>
+                            </div>
+                            <div class="flex items-start gap-2">
+                                <span class="text-cyan-400 mt-1 flex-shrink-0">✓</span>
+                                <span class="text-xs text-gray-300">Optimisation des performances</span>
+                            </div>
+                            <div class="flex items-start gap-2">
+                                <span class="text-cyan-400 mt-1 flex-shrink-0">✓</span>
+                                <span class="text-xs text-gray-300">Sélection avancée de features</span>
+                            </div>
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 text-xs bg-cyan-500/20 text-cyan-300 rounded-full border border-cyan-500/30">Random Forest</span>
+                            <span class="px-2 py-1 text-xs bg-cyan-500/20 text-cyan-300 rounded-full border border-cyan-500/30">XGBoost</span>
+                            <span class="px-2 py-1 text-xs bg-cyan-500/20 text-cyan-300 rounded-full border border-cyan-500/30">Scikit-learn</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="project-card group relative overflow-hidden rounded-xl border border-purple-500/30 hover:border-cyan-500/60 transition duration-300 backdrop-blur-sm bg-gradient-to-br from-purple-900/30 to-cyan-900/20 hover:from-purple-900/50 hover:to-cyan-900/40 hover:scale-105" data-category="ml">
+                    <div class="p-6">
+                        <div class="text-5xl mb-4 group-hover:scale-110 transition duration-300">💬</div>
+                        <div class="text-xs text-cyan-400 font-semibold mb-2">2025</div>
+                        <h3 class="text-xl font-black mb-2 group-hover:text-cyan-400 transition">Analyse de Sentiments NLP</h3>
+                        <p class="text-gray-300 text-sm mb-4">Classification automatique de critiques de films avec BERT</p>
+                        <div class="space-y-3 mb-4">
+                            <div class="flex items-start gap-2">
+                                <span class="text-cyan-400 mt-1 flex-shrink-0">✓</span>
+                                <span class="text-xs text-gray-300">Modèles BERT state-of-the-art</span>
+                            </div>
+                            <div class="flex items-start gap-2">
+                                <span class="text-cyan-400 mt-1 flex-shrink-0">✓</span>
+                                <span class="text-xs text-gray-300">API REST performante</span>
+                            </div>
+                            <div class="flex items-start gap-2">
+                                <span class="text-cyan-400 mt-1 flex-shrink-0">✓</span>
+                                <span class="text-xs text-gray-300">Interface réactive</span>
+                            </div>
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 text-xs bg-cyan-500/20 text-cyan-300 rounded-full border border-cyan-500/30">NLP</span>
+                            <span class="px-2 py-1 text-xs bg-cyan-500/20 text-cyan-300 rounded-full border border-cyan-500/30">BERT</span>
+                            <span class="px-2 py-1 text-xs bg-cyan-500/20 text-cyan-300 rounded-full border border-cyan-500/30">FastAPI</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="project-card group relative overflow-hidden rounded-xl border border-purple-500/30 hover:border-cyan-500/60 transition duration-300 backdrop-blur-sm bg-gradient-to-br from-purple-900/30 to-cyan-900/20 hover:from-purple-900/50 hover:to-cyan-900/40 hover:scale-105" data-category="viz">
+                    <div class="p-6">
+                        <div class="text-5xl mb-4 group-hover:scale-110 transition duration-300">🗺️</div>
+                        <div class="text-xs text-cyan-400 font-semibold mb-2">2025</div>
+                        <h3 class="text-xl font-black mb-2 group-hover:text-cyan-400 transition">Dashboard Power BI</h3>
+                        <p class="text-gray-300 text-sm mb-4">Visualisation interactive avec KPI et analyse prédictive</p>
+                        <div class="space-y-3 mb-4">
+                            <div class="flex items-start gap-2">
+                                <span class="text-cyan-400 mt-1 flex-shrink-0">✓</span>
+                                <span class="text-xs text-gray-300">Cartes géographiques dynamiques</span>
+                            </div>
+                            <div class="flex items-start gap-2">
+                                <span class="text-cyan-400 mt-1 flex-shrink-0">✓</span>
+                                <span class="text-xs text-gray-300">Tendances et risques identifiés</span>
+                            </div>
+                            <div class="flex items-start gap-2">
+                                <span class="text-cyan-400 mt-1 flex-shrink-0">✓</span>
+                                <span class="text-xs text-gray-300">Dashboard interactif</span>
+                            </div>
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 text-xs bg-cyan-500/20 text-cyan-300 rounded-full border border-cyan-500/30">Power BI</span>
+                            <span class="px-2 py-1 text-xs bg-cyan-500/20 text-cyan-300 rounded-full border border-cyan-500/30">Géospatial</span>
+                            <span class="px-2 py-1 text-xs bg-cyan-500/20 text-cyan-300 rounded-full border border-cyan-500/30">Prédiction</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-24 px-4 relative z-10">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-5xl font-black text-center mb-16">
+                <span class="gradient-text">Compétences Techniques</span>
+            </h2>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                <!-- Langages -->
+                <div class="p-6 bg-gradient-to-br from-purple-500/10 to-cyan-500/10 border border-purple-500/30 hover:border-cyan-500/60 rounded-xl backdrop-blur-sm transition hover:scale-105 duration-300">
+                    <h3 class="text-lg font-black mb-4 text-cyan-400 flex items-center gap-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12a9 9 0 11-18 0 9 9 0 0118 0m-9 5a4 4 0 100-8 4 4 0 000 8z"/></svg>
+                        Langages
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 text-cyan-300 text-sm rounded-lg border border-cyan-500/30 hover:border-cyan-500/60 transition">Python</span>
+                        <span class="px-3 py-1 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 text-cyan-300 text-sm rounded-lg border border-cyan-500/30 hover:border-cyan-500/60 transition">R</span>
+                        <span class="px-3 py-1 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 text-cyan-300 text-sm rounded-lg border border-cyan-500/30 hover:border-cyan-500/60 transition">JavaScript</span>
+                        <span class="px-3 py-1 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 text-cyan-300 text-sm rounded-lg border border-cyan-500/30 hover:border-cyan-500/60 transition">Java</span>
+                        <span class="px-3 py-1 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 text-cyan-300 text-sm rounded-lg border border-cyan-500/30 hover:border-cyan-500/60 transition">C</span>
+                        <span class="px-3 py-1 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 text-cyan-300 text-sm rounded-lg border border-cyan-500/30 hover:border-cyan-500/60 transition">HTML/CSS</span>
+                    </div>
+                </div>
+
+                <!-- IA & ML -->
+                <div class="p-6 bg-gradient-to-br from-purple-500/10 to-cyan-500/10 border border-purple-500/30 hover:border-cyan-500/60 rounded-xl backdrop-blur-sm transition hover:scale-105 duration-300">
+                    <h3 class="text-lg font-black mb-4 text-cyan-400 flex items-center gap-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                        IA & ML
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 text-cyan-300 text-sm rounded-lg border border-cyan-500/30 hover:border-cyan-500/60 transition">LangChain</span>
+                        <span class="px-3 py-1 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 text-cyan-300 text-sm rounded-lg border border-cyan-500/30 hover:border-cyan-500/60 transition">FAISS</span>
+                        <span class="px-3 py-1 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 text-cyan-300 text-sm rounded-lg border border-cyan-500/30 hover:border-cyan-500/60 transition">Scikit-learn</span>
+                        <span class="px-3 py-1 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 text-cyan-300 text-sm rounded-lg border border-cyan-500/30 hover:border-cyan-500/60 transition">XGBoost</span>
+                        <span class="px-3 py-1 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 text-cyan-300 text-sm rounded-lg border border-cyan-500/30 hover:border-cyan-500/60 transition">TensorFlow</span>
+                        <span class="px-3 py-1 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 text-cyan-300 text-sm rounded-lg border border-cyan-500/30 hover:border-cyan-500/60 transition">BERT</span>
+                    </div>
+                </div>
+
+                <!-- Web & Frameworks -->
+                <div class="p-6 bg-gradient-to-br from-purple-500/10 to-cyan-500/10 border border-purple-500/30 hover:border-cyan-500/60 rounded-xl backdrop-blur-sm transition hover:scale-105 duration-300">
+                    <h3 class="text-lg font-black mb-4 text-cyan-400 flex items-center gap-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20m0 0l-.75 3M9 20H5m4 0h10m0 0l.75 3M19 20l.75-3m0 0h4m-4 0h.01M3 13h2m2 0h2m2 0h2m2 0h2m2 0h2m2 0h2"/></svg>
+                        Web & Frameworks
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 text-cyan-300 text-sm rounded-lg border border-cyan-500/30 hover:border-cyan-500/60 transition">Flask</span>
+                        <span class="px-3 py-1 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 text-cyan-300 text-sm rounded-lg border border-cyan-500/30 hover:border-cyan-500/60 transition">FastAPI</span>
+                        <span class="px-3 py-1 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 text-cyan-300 text-sm rounded-lg border border-cyan-500/30 hover:border-cyan-500/60 transition">React.js</span>
+                        <span class="px-3 py-1 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 text-cyan-300 text-sm rounded-lg border border-cyan-500/30 hover:border-cyan-500/60 transition">Streamlit</span>
+                        <span class="px-3 py-1 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 text-cyan-300 text-sm rounded-lg border border-cyan-500/30 hover:border-cyan-500/60 transition">Symfony</span>
+                    </div>
+                </div>
+
+                <!-- Données -->
+                <div class="p-6 bg-gradient-to-br from-purple-500/10 to-cyan-500/10 border border-purple-500/30 hover:border-cyan-500/60 rounded-xl backdrop-blur-sm transition hover:scale-105 duration-300">
+                    <h3 class="text-lg font-black mb-4 text-cyan-400 flex items-center gap-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7m0 0c0 2.21-3.582 4-8 4s-8-1.79-8-4m0 0V5c0 2.21 3.582 4 8 4s8-1.79 8-4v2z"/></svg>
+                        Données
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 text-cyan-300 text-sm rounded-lg border border-cyan-500/30 hover:border-cyan-500/60 transition">MySQL</span>
+                        <span class="px-3 py-1 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 text-cyan-300 text-sm rounded-lg border border-cyan-500/30 hover:border-cyan-500/60 transition">MongoDB</span>
+                        <span class="px-3 py-1 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 text-cyan-300 text-sm rounded-lg border border-cyan-500/30 hover:border-cyan-500/60 transition">Spark</span>
+                        <span class="px-3 py-1 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 text-cyan-300 text-sm rounded-lg border border-cyan-500/30 hover:border-cyan-500/60 transition">Hadoop</span>
+                        <span class="px-3 py-1 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 text-cyan-300 text-sm rounded-lg border border-cyan-500/30 hover:border-cyan-500/60 transition">Power BI</span>
+                    </div>
+                </div>
+
+                <!-- Outils -->
+                <div class="p-6 bg-gradient-to-br from-purple-500/10 to-cyan-500/10 border border-purple-500/30 hover:border-cyan-500/60 rounded-xl backdrop-blur-sm transition hover:scale-105 duration-300">
+                    <h3 class="text-lg font-black mb-4 text-cyan-400 flex items-center gap-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/></svg>
+                        Outils
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 text-cyan-300 text-sm rounded-lg border border-cyan-500/30 hover:border-cyan-500/60 transition">Git</span>
+                        <span class="px-3 py-1 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 text-cyan-300 text-sm rounded-lg border border-cyan-500/30 hover:border-cyan-500/60 transition">Jupyter</span>
+                        <span class="px-3 py-1 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 text-cyan-300 text-sm rounded-lg border border-cyan-500/30 hover:border-cyan-500/60 transition">Google Colab</span>
+                        <span class="px-3 py-1 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 text-cyan-300 text-sm rounded-lg border border-cyan-500/30 hover:border-cyan-500/60 transition">Docker</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Certifications -->
+            <div class="bg-gradient-to-r from-purple-500/20 to-cyan-500/20 border border-purple-500/30 rounded-xl p-8 backdrop-blur-sm hover:border-cyan-500/50 transition">
+                <h3 class="text-2xl font-black mb-6 flex items-center gap-2">
+                    <svg class="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    Certifications
+                </h3>
+                <div class="grid md:grid-cols-3 gap-4">
+                    <div class="flex items-center gap-3 p-4 rounded-lg bg-purple-500/10 border border-purple-500/20 hover:border-cyan-500/40 transition">
+                        <svg class="w-5 h-5 text-cyan-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                        <span class="text-gray-300 text-sm">NVIDIA Deep Learning Institute</span>
+                    </div>
+                    <div class="flex items-center gap-3 p-4 rounded-lg bg-purple-500/10 border border-purple-500/20 hover:border-cyan-500/40 transition">
+                        <svg class="w-5 h-5 text-cyan-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                        <span class="text-gray-300 text-sm">IBM RAG and Agentic AI</span>
+                    </div>
+                    <div class="flex items-center gap-3 p-4 rounded-lg bg-purple-500/10 border border-purple-500/20 hover:border-cyan-500/40 transition">
+                        <svg class="w-5 h-5 text-cyan-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                        <span class="text-gray-300 text-sm">NVIDIA Building Transformer-Based NLP</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Languages Section -->
+    <section class="py-16 px-4 relative z-10">
+        <div class="max-w-6xl mx-auto">
+            <div class="bg-gradient-to-r from-cyan-500/20 to-purple-500/20 border border-cyan-500/30 rounded-xl p-8 backdrop-blur-sm hover:border-cyan-500/50 transition">
+                <h3 class="text-2xl font-black mb-6">🌍 Langues</h3>
+                <div class="grid md:grid-cols-4 gap-4">
+                    <div class="p-4 bg-gradient-to-br from-purple-500/10 to-cyan-500/10 rounded-lg border border-purple-500/30 hover:border-cyan-500/50 transition">
+                        <div class="font-semibold text-cyan-400">Arabe</div>
+                        <div class="text-sm text-gray-400">Maternelle</div>
+                    </div>
+                    <div class="p-4 bg-gradient-to-br from-purple-500/10 to-cyan-500/10 rounded-lg border border-purple-500/30 hover:border-cyan-500/50 transition">
+                        <div class="font-semibold text-cyan-400">Français</div>
+                        <div class="text-sm text-gray-400">Excellent</div>
+                    </div>
+                    <div class="p-4 bg-gradient-to-br from-purple-500/10 to-cyan-500/10 rounded-lg border border-purple-500/30 hover:border-cyan-500/50 transition">
+                        <div class="font-semibold text-cyan-400">Anglais</div>
+                        <div class="text-sm text-gray-400">Excellent</div>
+                    </div>
+                    <div class="p-4 bg-gradient-to-br from-purple-500/10 to-cyan-500/10 rounded-lg border border-purple-500/30 hover:border-cyan-500/50 transition">
+                        <div class="font-semibold text-cyan-400">Allemand</div>
+                        <div class="text-sm text-gray-400">Intermédiaire</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 px-4 relative z-10">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="text-5xl font-black mb-6">
+                <span class="gradient-text">Parlons de vos projets !</span>
+            </h2>
+            <p class="text-xl text-gray-300 mb-12">
+                Je recherche un stage de fin d'études de 6 mois (début 2026) en Data Science et IA. N'hésitez pas à me contacter !
+            </p>
+
+            <div class="grid md:grid-cols-3 gap-6 mb-12">
+                <a href="mailto:yasmine.boukadida@esprit.tn" class="p-6 bg-gradient-to-br from-purple-500/20 to-cyan-500/20 border border-purple-500/30 hover:border-cyan-500/60 rounded-xl backdrop-blur-sm transition hover:scale-105 duration-300">
+                    <svg class="w-8 h-8 mx-auto mb-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                    <div class="font-semibold mb-2">Email</div>
+                    <div class="text-sm text-gray-400">yasmine.boukadida@esprit.tn</div>
+                </a>
+                <a href="tel:+21623550789" class="p-6 bg-gradient-to-br from-purple-500/20 to-cyan-500/20 border border-purple-500/30 hover:border-cyan-500/60 rounded-xl backdrop-blur-sm transition hover:scale-105 duration-300">
+                    <svg class="w-8 h-8 mx-auto mb-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                    <div class="font-semibold mb-2">Téléphone</div>
+                    <div class="text-sm text-gray-400">+216 23 550 789</div>
+                </a>
+                <div class="p-6 bg-gradient-to-br from-purple-500/20 to-cyan-500/20 border border-purple-500/30 rounded-xl backdrop-blur-sm">
+                    <svg class="w-8 h-8 mx-auto mb-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                    <div class="font-semibold mb-2">Location</div>
+                    <div class="text-sm text-gray-400">Tunis, Tunisia</div>
+                </div>
+            </div>
+
+            <div class="flex flex-wrap gap-6 justify-center">
+                <a href="https://linkedin.com/in/yasmine-boukadida" target="_blank" rel="noopener noreferrer" class="px-8 py-3 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-lg font-bold hover:shadow-xl hover:shadow-cyan-500/40 transition transform hover:scale-105">
+                    LinkedIn
+                </a>
+                <a href="https://github.com/yasmine20022" target="_blank" rel="noopener noreferrer" class="px-8 py-3 border-2 border-purple-500 rounded-lg font-bold hover:bg-purple-500/10 transition transform hover:scale-105">
+                    GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-purple-500/20 py-12 px-4 text-center relative z-10">
+        <div class="max-w-6xl mx-auto">
+            <div class="mb-8 space-y-4">
+                <div class="flex justify-center gap-6">
+                    <a href="https://linkedin.com/in/yasmine-boukadida" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-cyan-400 transition">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M16.338 16.338H13.67V12.16c0-.995-.017-2.553-1.553-2.553-1.554 0-1.792 1.213-1.792 2.46v3.721H8.584V9.255h2.533v1.083h.035c.353-.67 1.215-1.378 2.501-1.378 2.651 0 3.14 1.742 3.14 4.053zM5.004 8.575a1.548 1.548 0 11-.002-3.096 1.548 1.548 0 01.002 3.096zm-1.337 7.763h2.673V9.255H3.667v7.083zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z"/></svg>
+                    </a>
+                </div>
+                <a href="https://github.com/yasmine20022" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-cyan-400 transition">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 0C4.477 0 0 4.484 0 10.017c0 4.425 2.865 8.18 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.868-.013-1.703-2.782.603-3.369-1.343-3.369-1.343-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.545 2.914 1.209.092-.937.35-1.546.636-1.903-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0110 4.817a9.54 9.54 0 012.502.336c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C17.138 18.194 20 14.44 20 10.017 20 4.484 15.522 0 10 0z" clip-rule="evenodd"/></svg>
+                </a>
+                <a href="mailto:yasmine.boukadida@esprit.tn" class="text-gray-400 hover:text-cyan-400 transition">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                </a>
+            </div>
+            <p class="text-gray-500 text-sm">© 2025 Yasmine Boukadida. Tous droits réservés.</p>
+            <p class="text-gray-600 text-xs">Développé avec HTML5, Tailwind CSS et ❤️</p>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a link is clicked
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Project Filter
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active state from all buttons
+                filterBtns.forEach(b => {
+                    b.classList.remove('bg-gradient-to-r', 'from-cyan-500', 'to-purple-600', 'shadow-lg', 'shadow-cyan-500/40');
+                    b.classList.add('bg-purple-500/20', 'border', 'border-purple-500/40');
+                });
+
+                // Add active state to clicked button
+                btn.classList.remove('bg-purple-500/20', 'border', 'border-purple-500/40');
+                btn.classList.add('bg-gradient-to-r', 'from-cyan-500', 'to-purple-600', 'shadow-lg', 'shadow-cyan-500/40');
+
+                const filter = btn.getAttribute('data-filter');
+
+                // Filter projects
+                projectCards.forEach(card => {
+                    const category = card.getAttribute('data-category');
+                    if (filter === 'all' || category === filter) {
+                        card.style.display = 'block';
+                        card.style.animation = 'fadeIn 0.5s ease-in';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(section);
+        });
+    </script>
+
+    <style>
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .project-card {
+            animation: fadeIn 0.5s ease-in;
+        }
+    </style>
+
+</body>
+</html>
